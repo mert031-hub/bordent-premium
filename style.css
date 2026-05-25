@@ -2492,3 +2492,63 @@ a {
     font-size: 12px;
   }
 }
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-visual {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .av-frame {
+    width: min(92vw, 340px);
+    max-width: 340px;
+    min-height: 420px;
+    aspect-ratio: 4 / 5;
+
+    border-radius: 28px;
+    overflow: hidden;
+
+    margin: 0 auto;
+  }
+
+  .av-image-wrap,
+  .av-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .av-image {
+    object-fit: cover;
+    display: block;
+  }
+
+  .av-stat {
+    position: relative !important;
+
+    inset: unset !important;
+    top: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+
+    width: 100%;
+    max-width: 180px;
+
+    margin: 0 auto;
+    padding: 18px 20px;
+
+    z-index: 2;
+  }
+}
+@media (max-width: 768px) {
+  .about-visual .av-stat {
+    display: none !important;
+  }
+}
