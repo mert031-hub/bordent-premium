@@ -17,6 +17,7 @@
 
 <body>
 
+  <!-- ═══════════════════ SITE LOADER ═══════════════════ -->
   <div id="site-loader" class="site-loader">
     <div class="loader-inner">
       <div class="loader-brand">
@@ -30,25 +31,13 @@
     </div>
   </div>
 
+  <!-- ═══════════════════ TWEAKS PANEL ═══════════════════ -->
   <div id="tweaks-panel" class="tweaks-panel hidden">
     <div class="tp-header">
       <span>Tweaks</span>
       <button id="tp-close" aria-label="Kapat">×</button>
     </div>
     <div class="tp-body">
-      <div class="tp-group">
-        <label class="tp-label">Renk Teması</label>
-        <div class="tp-swatches">
-          <button class="tp-swatch" data-theme="cyan" style="background:linear-gradient(135deg,#53D8FB,#2FD6C7)"
-            title="Cyan"></button>
-          <button class="tp-swatch active" data-theme="gold" style="background:linear-gradient(135deg,#D4AF37,#C59B2A)"
-            title="Gold"></button>
-          <button class="tp-swatch" data-theme="violet" style="background:linear-gradient(135deg,#A78BFA,#8B5CF6)"
-            title="Violet"></button>
-          <button class="tp-swatch" data-theme="rose" style="background:linear-gradient(135deg,#F472B6,#EC4899)"
-            title="Rose"></button>
-        </div>
-      </div>
       <div class="tp-group">
         <label class="tp-label">Hero Başlık</label>
         <div class="tp-radio-group" id="hero-text-options">
@@ -77,6 +66,7 @@
     </div>
   </div>
 
+  <!-- ═══════════════════ NAV ═══════════════════ -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
@@ -105,6 +95,7 @@
     </div>
   </nav>
 
+  <!-- ═══════════════════ HERO ═══════════════════ -->
   <section class="hero" id="hero">
     <canvas id="particle-canvas"></canvas>
     <div class="glow g1"></div>
@@ -123,7 +114,7 @@
           İmzanız
         </h1>
         <p class="hero-subtitle ha-3">
-          Modern diş hekimliğinde yeni nesil deneyim —<br>
+          Modern diş hekimliğinde yeni nesil deneyim —
           teknoloji, estetik ve uzmanlığın buluşma noktası.
         </p>
         <div class="hero-ctas ha-4">
@@ -137,17 +128,17 @@
           <a href="#services" class="btn-secondary">Hizmetlerimiz</a>
         </div>
         <div class="hero-stats ha-5">
-          <div class="stat-pill glass">
+          <div class="stat-pill">
             <span class="sp-num">500<sup>+</sup></span>
             <span class="sp-label">Mutlu Hasta</span>
           </div>
           <div class="stat-divider"></div>
-          <div class="stat-pill glass">
+          <div class="stat-pill">
             <span class="sp-num">10<sup>+</sup></span>
             <span class="sp-label">Yıl Deneyim</span>
           </div>
           <div class="stat-divider"></div>
-          <div class="stat-pill glass">
+          <div class="stat-pill">
             <span class="sp-num">%98</span>
             <span class="sp-label">Memnuniyet</span>
           </div>
@@ -155,37 +146,55 @@
       </div>
 
       <div class="hero-visual ha-6">
-        <div class="hv-frame glass">
-          <div class="hv-placeholder">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="hatch" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="rotate(45)">
-                  <line x1="0" y1="0" x2="0" y2="20" stroke="rgba(212,175,55,0.06)" stroke-width="8" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#hatch)" />
-            </svg>
-            <span class="ph-label">Klinik / Doktor<br>Fotoğrafı</span>
+        <div class="hv-frame">
+
+          <div class="hv-image-wrap">
+            <img src="images/İsmailHocaPP.jpg" alt="Bordent Klinik" class="hv-image" />
+            <div class="hv-overlay"></div>
           </div>
-          <div class="hv-badge hv-b1 glass">
+
+          <div class="hv-badge hv-b1">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <circle cx="9" cy="9" r="7" stroke="#D4AF37" stroke-width="1.5" />
-              <path d="M6 9l2 2 4-4" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"
+              <circle cx="9" cy="9" r="7" stroke="var(--acc)" stroke-width="1.5" />
+              <path d="M6 9l2 2 4-4" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
             <span>ISO Sertifikalı</span>
           </div>
-          <div class="hv-badge hv-b2 glass">
+          <div class="hv-badge hv-b2">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M9 2l1.8 5H16l-4.1 3 1.6 5L9 12.5 4.5 15l1.6-5L2 7h5.2z" fill="#F5D37F" opacity="0.9" />
+              <path d="M9 2l1.8 5H16l-4.1 3 1.6 5L9 12.5 4.5 15l1.6-5L2 7h5.2z" fill="var(--acc-soft)" opacity="0.9" />
             </svg>
             <span>3D Teknoloji</span>
           </div>
-          <div class="hv-badge hv-b3 glass">
+          <div class="hv-badge hv-b3">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M9 3C5.69 3 3 5.69 3 9s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="rgba(212,175,55,0.2)"
-                stroke="#D4AF37" stroke-width="1.2" />
-              <path d="M9 6v3l2 2" stroke="#D4AF37" stroke-width="1.2" stroke-linecap="round" />
+              <path d="M9 3C5.69 3 3 5.69 3 9s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="rgba(14,165,233,0.12)"
+                stroke="var(--acc)" stroke-width="1.2" />
+              <path d="M9 6v3l2 2" stroke="var(--acc)" stroke-width="1.2" stroke-linecap="round" />
+            </svg>
+            <span>%98 Başarı</span>
+          </div>
+        </div>
+
+        <div class="hero-trust-strip">
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="9" r="7" stroke="var(--acc)" stroke-width="1.5" />
+              <path d="M6 9l2 2 4-4" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <span>ISO Sertifikalı</span>
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+              <path d="M9 2l1.8 5H16l-4.1 3 1.6 5L9 12.5 4.5 15l1.6-5L2 7h5.2z" fill="var(--acc-soft)" />
+            </svg>
+            <span>3D Teknoloji</span>
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+              <path d="M9 3C5.69 3 3 5.69 3 9s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="rgba(14,165,233,0.12)"
+                stroke="var(--acc)" stroke-width="1.2" />
             </svg>
             <span>%98 Başarı</span>
           </div>
@@ -199,75 +208,92 @@
     </div>
   </section>
 
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
   <section class="section about-section" id="about">
     <div class="section-inner">
       <div class="about-grid">
+
+        <!-- ABOUT VISUAL -->
         <div class="about-visual reveal-left">
-          <div class="av-frame glass">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="hatch2" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="rotate(45)">
-                  <line x1="0" y1="0" x2="0" y2="20" stroke="rgba(212,175,55,0.05)" stroke-width="8" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#hatch2)" />
-            </svg>
-            <span class="ph-label">Ekip / Klinik<br>Fotoğrafı</span>
+          <div class="av-frame">
+            <div class="av-image-wrap">
+              <img src="images/İsmailHocaPP.jpg" alt="Bordent Klinik" class="av-image" />
+              <div class="av-overlay"></div>
+            </div>
           </div>
-          <div class="av-stat glass s1">
+
+          <div class="av-stat s1">
             <strong class="as-num">500<sup>+</sup></strong>
             <span class="as-label">Başarılı Tedavi</span>
           </div>
-          <div class="av-stat glass s2">
+          <div class="av-stat s2">
             <strong class="as-num">%98</strong>
             <span class="as-label">Memnuniyet</span>
           </div>
         </div>
 
+        <!-- ABOUT CONTENT -->
         <div class="about-content">
           <div class="section-badge reveal-up">Hakkımızda</div>
-          <h2 class="section-title reveal-up">Diş Hekimliğinde<br><span class="gradient-text">Premium Deneyim</span>
+          <h2 class="section-title reveal-up">
+            Diş Hekimliğinde<br>
+            <span class="gradient-text">Premium Deneyim</span>
           </h2>
           <p class="about-text reveal-up">
-            Özel Bordent Kliniği olarak Afyonkarahisar'da en ileri teknoloji ve uzman kadromuzla ağız ve diş sağlığı
-            hizmetleri sunuyoruz. Her hastamızı biricik görüyor, gülüşlerine özel çözümler üretiyoruz.
+            Özel Bordent Kliniği olarak Afyonkarahisar'da en ileri teknoloji ve uzman
+            kadromuzla ağız ve diş sağlığı hizmetleri sunuyoruz.
+            Her hastamızı biricik görüyor, gülüşlerine özel çözümler üretiyoruz.
           </p>
           <div class="about-features">
+
             <div class="af-item reveal-up" style="--d:0s">
               <div class="af-icon">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                  <rect x="2" y="2" width="18" height="18" rx="5" stroke="#D4AF37" stroke-width="1.5" />
-                  <path d="M7 11h8M11 7v8" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" />
+                  <rect x="2" y="2" width="18" height="18" rx="5" stroke="var(--acc)" stroke-width="1.5" />
+                  <path d="M7 11h8M11 7v8" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round" />
                 </svg>
               </div>
-              <div><strong>3D Dijital Görüntüleme</strong><span>Cone Beam CT ile hassas teşhis</span></div>
+              <div>
+                <strong>3D Dijital Görüntüleme</strong>
+                <span>Cone Beam CT ile hassas teşhis</span>
+              </div>
             </div>
+
             <div class="af-item reveal-up" style="--d:0.1s">
               <div class="af-icon">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                  <circle cx="11" cy="11" r="8" stroke="#D4AF37" stroke-width="1.5" />
-                  <path d="M8 11l2 2 4-4" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"
+                  <circle cx="11" cy="11" r="8" stroke="var(--acc)" stroke-width="1.5" />
+                  <path d="M8 11l2 2 4-4" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
               </div>
-              <div><strong>Uluslararası Sterilizasyon</strong><span>Sınıf B otoklav sterilizasyon</span></div>
+              <div>
+                <strong>Uluslararası Sterilizasyon</strong>
+                <span>Sınıf B otoklav sterilizasyon</span>
+              </div>
             </div>
+
             <div class="af-item reveal-up" style="--d:0.2s">
               <div class="af-icon">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                   <path
                     d="M11 2C7.13 2 4 5.13 4 9c0 5 7 11 7 11s7-6 7-11c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"
-                    stroke="#D4AF37" stroke-width="1.5" stroke-linejoin="round" />
+                    stroke="var(--acc)" stroke-width="1.5" stroke-linejoin="round" />
                 </svg>
               </div>
-              <div><strong>Uzman Hekim Kadrosu</strong><span>Alanında sertifikalı doktorlar</span></div>
+              <div>
+                <strong>Uzman Hekim Kadrosu</strong>
+                <span>Alanında sertifikalı doktorlar</span>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ═══════════════════ SERVICES ═══════════════════ -->
   <section class="section services-section" id="services">
     <div class="section-inner">
       <div class="section-header">
@@ -277,13 +303,13 @@
       </div>
       <div class="services-grid">
 
-        <div class="svc-card glass reveal-up" style="--d:0s">
+        <div class="svc-card reveal-up" style="--d:0s">
           <span class="svc-num">01</span>
           <div class="svc-icon">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <circle cx="15" cy="15" r="11" stroke="#D4AF37" stroke-width="1.5" opacity="0.4" />
-              <circle cx="15" cy="15" r="6" fill="rgba(212,175,55,0.15)" stroke="#D4AF37" stroke-width="1.5" />
-              <path d="M10 7l1.5 3M20 7l-1.5 3M7 10l3 1.5M23 10l-3 1.5" stroke="#F5D37F" stroke-width="1.2"
+              <circle cx="15" cy="15" r="11" stroke="var(--acc)" stroke-width="1.5" opacity="0.4" />
+              <circle cx="15" cy="15" r="6" fill="rgba(14,165,233,0.1)" stroke="var(--acc)" stroke-width="1.5" />
+              <path d="M10 7l1.5 3M20 7l-1.5 3M7 10l3 1.5M23 10l-3 1.5" stroke="var(--acc2)" stroke-width="1.2"
                 stroke-linecap="round" />
             </svg>
           </div>
@@ -293,13 +319,13 @@
           <div class="svc-line"></div>
         </div>
 
-        <div class="svc-card glass reveal-up" style="--d:0.07s">
+        <div class="svc-card reveal-up" style="--d:0.07s">
           <span class="svc-num">02</span>
           <div class="svc-icon">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <rect x="12" y="4" width="6" height="13" rx="3" stroke="#D4AF37" stroke-width="1.5" />
-              <path d="M15 17v9" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" />
-              <ellipse cx="15" cy="26" rx="5" ry="2" fill="rgba(212,175,55,0.15)" stroke="#D4AF37" stroke-width="1" />
+              <rect x="12" y="4" width="6" height="13" rx="3" stroke="var(--acc)" stroke-width="1.5" />
+              <path d="M15 17v9" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round" />
+              <ellipse cx="15" cy="26" rx="5" ry="2" fill="rgba(14,165,233,0.1)" stroke="var(--acc)" stroke-width="1" />
             </svg>
           </div>
           <h3 class="svc-title">İmplant</h3>
@@ -307,15 +333,15 @@
           <div class="svc-line"></div>
         </div>
 
-        <div class="svc-card glass reveal-up" style="--d:0.14s">
+        <div class="svc-card reveal-up" style="--d:0.14s">
           <span class="svc-num">03</span>
           <div class="svc-icon">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <path d="M7 18C7 18 9 11 15 11C21 11 23 18 23 18" stroke="#D4AF37" stroke-width="1.5"
+              <path d="M7 18C7 18 9 11 15 11C21 11 23 18 23 18" stroke="var(--acc)" stroke-width="1.5"
                 stroke-linecap="round" />
-              <circle cx="11" cy="20" r="2.5" fill="rgba(212,175,55,0.3)" stroke="#D4AF37" stroke-width="1" />
-              <circle cx="15" cy="21.5" r="3" fill="rgba(212,175,55,0.4)" stroke="#D4AF37" stroke-width="1" />
-              <circle cx="19" cy="20" r="2.5" fill="rgba(212,175,55,0.3)" stroke="#D4AF37" stroke-width="1" />
+              <circle cx="11" cy="20" r="2.5" fill="rgba(14,165,233,0.2)" stroke="var(--acc)" stroke-width="1" />
+              <circle cx="15" cy="21.5" r="3" fill="rgba(14,165,233,0.3)" stroke="var(--acc)" stroke-width="1" />
+              <circle cx="19" cy="20" r="2.5" fill="rgba(14,165,233,0.2)" stroke="var(--acc)" stroke-width="1" />
             </svg>
           </div>
           <h3 class="svc-title">Gülüş Tasarımı</h3>
@@ -323,13 +349,13 @@
           <div class="svc-line"></div>
         </div>
 
-        <div class="svc-card glass reveal-up" style="--d:0.21s">
+        <div class="svc-card reveal-up" style="--d:0.21s">
           <span class="svc-num">04</span>
           <div class="svc-icon">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <rect x="10" y="3" width="10" height="16" rx="5" stroke="#D4AF37" stroke-width="1.5" />
-              <path d="M15 19v8M11 26h8" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" />
-              <line x1="15" y1="9" x2="15" y2="13" stroke="#F5D37F" stroke-width="2" stroke-linecap="round" />
+              <rect x="10" y="3" width="10" height="16" rx="5" stroke="var(--acc)" stroke-width="1.5" />
+              <path d="M15 19v8M11 26h8" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="15" y1="9" x2="15" y2="13" stroke="var(--acc2)" stroke-width="2" stroke-linecap="round" />
             </svg>
           </div>
           <h3 class="svc-title">Kanal Tedavisi</h3>
@@ -337,15 +363,15 @@
           <div class="svc-line"></div>
         </div>
 
-        <div class="svc-card glass reveal-up" style="--d:0.28s">
+        <div class="svc-card reveal-up" style="--d:0.28s">
           <span class="svc-num">05</span>
           <div class="svc-icon">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <path d="M7 15h16" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" />
-              <circle cx="9" cy="15" r="3" stroke="#D4AF37" stroke-width="1.5" />
-              <circle cx="15" cy="15" r="3" stroke="#D4AF37" stroke-width="1.5" />
-              <circle cx="21" cy="15" r="3" stroke="#D4AF37" stroke-width="1.5" />
-              <path d="M9 9c0 2 2 4 6 4s6-2 6-4" stroke="#F5D37F" stroke-width="1" stroke-linecap="round" />
+              <path d="M7 15h16" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round" />
+              <circle cx="9" cy="15" r="3" stroke="var(--acc)" stroke-width="1.5" />
+              <circle cx="15" cy="15" r="3" stroke="var(--acc)" stroke-width="1.5" />
+              <circle cx="21" cy="15" r="3" stroke="var(--acc)" stroke-width="1.5" />
+              <path d="M9 9c0 2 2 4 6 4s6-2 6-4" stroke="var(--acc2)" stroke-width="1" stroke-linecap="round" />
             </svg>
           </div>
           <h3 class="svc-title">Ortodonti</h3>
@@ -353,14 +379,14 @@
           <div class="svc-line"></div>
         </div>
 
-        <div class="svc-card glass reveal-up" style="--d:0.35s">
+        <div class="svc-card reveal-up" style="--d:0.35s">
           <span class="svc-num">06</span>
           <div class="svc-icon">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <path d="M15 5C12 5 9 8 9 12c0 3 1.5 5.5 6 8 4.5-2.5 6-5 6-8 0-4-3-7-6-7z" stroke="#D4AF37"
+              <path d="M15 5C12 5 9 8 9 12c0 3 1.5 5.5 6 8 4.5-2.5 6-5 6-8 0-4-3-7-6-7z" stroke="var(--acc)"
                 stroke-width="1.5" stroke-linejoin="round" />
-              <circle cx="15" cy="12" r="3" fill="rgba(212,175,55,0.2)" />
-              <path d="M11 25h8" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" />
+              <circle cx="15" cy="12" r="3" fill="rgba(14,165,233,0.12)" />
+              <path d="M11 25h8" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round" />
             </svg>
           </div>
           <h3 class="svc-title">Pedodonti</h3>
@@ -368,12 +394,12 @@
           <div class="svc-line"></div>
         </div>
 
-        <div class="svc-card glass reveal-up svc-wide" style="--d:0.42s">
+        <div class="svc-card reveal-up svc-wide" style="--d:0.42s">
           <span class="svc-num">07</span>
           <div class="svc-icon">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <path d="M15 3l2.3 7H25l-6 4.3 2.3 7-6.3-4.5L8.7 21.3l2.3-7L5 10h7.7z" fill="rgba(212,175,55,0.15)"
-                stroke="#D4AF37" stroke-width="1.3" stroke-linejoin="round" />
+              <path d="M15 3l2.3 7H25l-6 4.3 2.3 7-6.3-4.5L8.7 21.3l2.3-7L5 10h7.7z" fill="rgba(14,165,233,0.1)"
+                stroke="var(--acc)" stroke-width="1.3" stroke-linejoin="round" />
             </svg>
           </div>
           <h3 class="svc-title">Estetik Diş Hekimliği</h3>
@@ -386,71 +412,111 @@
     </div>
   </section>
 
+  <!-- ═══════════════════ BEFORE/AFTER ═══════════════════ -->
   <section class="section ba-section" id="before-after">
     <div class="section-inner">
       <div class="section-header">
         <div class="section-badge reveal-up">Sonuçlar</div>
-        <h2 class="section-title reveal-up">Önce <span class="gradient-text">& Sonra</span></h2>
-        <p class="section-sub reveal-up">Hastaların gülüş dönüşümleri — kaydırarak karşılaştırın</p>
+        <h2 class="section-title reveal-up">Önce <span class="gradient-text">&amp; Sonra</span></h2>
+        <p class="section-sub reveal-up">Gerçek hasta dönüşümleri — kaydırarak karşılaştırın</p>
       </div>
-      <div class="ba-wrapper reveal-up">
-        <div class="comparison" id="comparison">
+
+      <!-- Slider 1: Whitening -->
+      <div class="ba-case reveal-up">
+        <div class="ba-case-label">
+          <span class="ba-case-tag">Diş Beyazlatma</span>
+        </div>
+        <div class="comparison" data-id="1">
           <div class="cmp-after">
-            <div class="cmp-atm after-atm"></div>
-            <div class="cmp-teeth after-teeth">
-              <div class="t-gum"></div>
-              <div class="t-row">
-                <div class="tooth ts"></div>
-                <div class="tooth tm"></div>
-                <div class="tooth tl"></div>
-                <div class="tooth tl"></div>
-                <div class="tooth tm"></div>
-                <div class="tooth ts"></div>
-              </div>
-            </div>
+            <img src="images/after-whitening.jpg" alt="Diş Beyazlatma - Sonra" class="cmp-img" draggable="false">
             <span class="cmp-label cmp-after-label">SONRA</span>
           </div>
-          <div class="cmp-before" id="cmp-before">
-            <div class="cmp-atm before-atm"></div>
-            <div class="cmp-teeth before-teeth">
-              <div class="t-gum"></div>
-              <div class="t-row">
-                <div class="tooth ts"></div>
-                <div class="tooth tm"></div>
-                <div class="tooth tl"></div>
-                <div class="tooth tl"></div>
-                <div class="tooth tm"></div>
-                <div class="tooth ts"></div>
-              </div>
-            </div>
+          <div class="cmp-before">
+            <img src="images/before-whitening.jpg" alt="Diş Beyazlatma - Önce" class="cmp-img" draggable="false">
             <span class="cmp-label cmp-before-label">ÖNCE</span>
           </div>
-          <div class="cmp-handle" id="cmp-handle">
+          <div class="cmp-handle">
             <div class="cmp-handle-line"></div>
             <div class="cmp-handle-circle">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <path d="M8 6L4 11l4 5M14 6l4 5-4 5" stroke="#8BE9FD" stroke-width="2" stroke-linecap="round"
+              <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+                <path d="M8 6L4 11l4 5M14 6l4 5-4 5" stroke="white" stroke-width="2" stroke-linecap="round"
                   stroke-linejoin="round" />
               </svg>
             </div>
             <div class="cmp-handle-line"></div>
           </div>
         </div>
-        <p class="ba-hint">
-          <svg class="ba-hint-icon ba-hint-left" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          Kaydırarak karşılaştırın
-          <svg class="ba-hint-icon ba-hint-right" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </p>
       </div>
+
+      <!-- Slider 2: Veneer -->
+      <div class="ba-case reveal-up" style="--d:0.1s">
+        <div class="ba-case-label">
+          <span class="ba-case-tag">Porselen Veneer</span>
+        </div>
+        <div class="comparison" data-id="2">
+          <div class="cmp-after">
+            <img src="images/after-veneer.jpg" alt="Porselen Veneer - Sonra" class="cmp-img" draggable="false">
+            <span class="cmp-label cmp-after-label">SONRA</span>
+          </div>
+          <div class="cmp-before">
+            <img src="images/before-veneer.jpg" alt="Porselen Veneer - Önce" class="cmp-img" draggable="false">
+            <span class="cmp-label cmp-before-label">ÖNCE</span>
+          </div>
+          <div class="cmp-handle">
+            <div class="cmp-handle-line"></div>
+            <div class="cmp-handle-circle">
+              <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+                <path d="M8 6L4 11l4 5M14 6l4 5-4 5" stroke="white" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="cmp-handle-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider 3: Implant -->
+      <div class="ba-case reveal-up" style="--d:0.2s">
+        <div class="ba-case-label">
+          <span class="ba-case-tag">İmplant Tedavisi</span>
+        </div>
+        <div class="comparison" data-id="3">
+          <div class="cmp-after">
+            <img src="images/after-implant.jpg" alt="İmplant Tedavisi - Sonra" class="cmp-img" draggable="false">
+            <span class="cmp-label cmp-after-label">SONRA</span>
+          </div>
+          <div class="cmp-before">
+            <img src="images/before-implant.jpg" alt="İmplant Tedavisi - Önce" class="cmp-img" draggable="false">
+            <span class="cmp-label cmp-before-label">ÖNCE</span>
+          </div>
+          <div class="cmp-handle">
+            <div class="cmp-handle-line"></div>
+            <div class="cmp-handle-circle">
+              <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+                <path d="M8 6L4 11l4 5M14 6l4 5-4 5" stroke="white" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="cmp-handle-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="ba-hint">
+        <svg class="ba-hint-icon ba-hint-left" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        Kaydırarak karşılaştırın
+        <svg class="ba-hint-icon ba-hint-right" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </p>
     </div>
   </section>
 
+  <!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
   <section class="section t-section" id="testimonials">
     <div class="section-inner">
       <div class="section-header">
@@ -461,7 +527,7 @@
 
         <div class="t-card glass reveal-up" style="--d:0s">
           <div class="t-top">
-            <div class="t-avatar">A</div>
+            <div class="t-avatar" style="background:linear-gradient(135deg,var(--acc),var(--acc2))">A</div>
             <div class="t-info">
               <strong>Ayşe K.</strong>
               <span>Afyonkarahisar</span>
@@ -479,7 +545,7 @@
               </svg>
             </div>
           </div>
-          <div class="t-stars" style="color: var(--acc);">★★★★★</div>
+          <div class="t-stars">★★★★★</div>
           <p class="t-text">"Uzun zamandır gülümsemekten çekiniyordum. Bordent ekibi sayesinde hayatım değişti. Porselen
             veneer uygulaması mükemmeldi, sonuçlar beklentilerimin çok üzerinde."</p>
           <span class="t-date">2 ay önce</span>
@@ -487,7 +553,7 @@
 
         <div class="t-card glass reveal-up" style="--d:0.1s">
           <div class="t-top">
-            <div class="t-avatar">M</div>
+            <div class="t-avatar" style="background:linear-gradient(135deg,var(--acc2),var(--acc))">M</div>
             <div class="t-info">
               <strong>Mehmet Y.</strong>
               <span>Afyonkarahisar</span>
@@ -505,7 +571,7 @@
               </svg>
             </div>
           </div>
-          <div class="t-stars" style="color: var(--acc);">★★★★★</div>
+          <div class="t-stars">★★★★★</div>
           <p class="t-text">"İmplant tedavisi için çok endişeliydim. Klinik inanılmaz profesyoneldi — ağrısız ve hızlı
             bir süreçti. Teknolojileri gerçekten fark yaratıyor."</p>
           <span class="t-date">1 ay önce</span>
@@ -513,7 +579,7 @@
 
         <div class="t-card glass reveal-up" style="--d:0.2s">
           <div class="t-top">
-            <div class="t-avatar">F</div>
+            <div class="t-avatar" style="background:linear-gradient(135deg,var(--acc-soft),var(--acc))">F</div>
             <div class="t-info">
               <strong>Fatma S.</strong>
               <span>Afyonkarahisar</span>
@@ -531,7 +597,7 @@
               </svg>
             </div>
           </div>
-          <div class="t-stars" style="color: var(--acc);">★★★★★</div>
+          <div class="t-stars">★★★★★</div>
           <p class="t-text">"Çocuğum dişçiden çok korkuyordu. Bordent ekibi onu rahatlatmayı başardı. Pedodonti servisi
             harika, ortam çocuk dostu ve modern."</p>
           <span class="t-date">3 hafta önce</span>
@@ -539,7 +605,7 @@
 
         <div class="t-card glass reveal-up" style="--d:0.3s">
           <div class="t-top">
-            <div class="t-avatar">E</div>
+            <div class="t-avatar" style="background:linear-gradient(135deg,var(--acc),var(--acc2))">E</div>
             <div class="t-info">
               <strong>Emre T.</strong>
               <span>Afyonkarahisar</span>
@@ -557,7 +623,7 @@
               </svg>
             </div>
           </div>
-          <div class="t-stars" style="color: var(--acc);">★★★★★</div>
+          <div class="t-stars">★★★★★</div>
           <p class="t-text">"Gülüş tasarımı için 3 kliniği ziyaret ettim. Bordent'in dijital planlama yaklaşımı ve
             sonuçları diğerlerinin çok üzerindeydi. Kesinlikle öneriyorum."</p>
           <span class="t-date">1 hafta önce</span>
@@ -567,6 +633,7 @@
     </div>
   </section>
 
+  <!-- ═══════════════════ GALLERY ═══════════════════ -->
   <section class="section gallery-section" id="gallery">
     <div class="section-inner">
       <div class="section-header">
@@ -576,33 +643,63 @@
             class="insta-handle">@ozel.bordent.adsp</a></p>
       </div>
       <div class="gallery-grid reveal-up">
-        <div class="g-item gi-tall"
-          style="--gb:linear-gradient(160deg,#0F172A 0%,#0A1424 60%,rgba(212,175,55,0.15) 100%)">
-          <div class="g-over"><span>Klinik</span></div>
-        </div>
-        <div class="g-item" style="--gb:linear-gradient(135deg,#07111F 0%,rgba(197,155,42,0.2) 100%)">
-          <div class="g-over"><span>Tedavi</span></div>
-        </div>
-        <div class="g-item" style="--gb:linear-gradient(160deg,#0A1424 0%,rgba(245,211,127,0.15) 100%)">
-          <div class="g-over"><span>Sonuç</span></div>
-        </div>
-        <div class="g-item gi-wide"
-          style="--gb:linear-gradient(135deg,#0D192C 0%,rgba(212,175,55,0.12) 50%,#07111F 100%)">
-          <div class="g-over"><span>Ekip</span></div>
-        </div>
-        <div class="g-item" style="--gb:linear-gradient(135deg,#0A1424 0%,rgba(197,155,42,0.18) 100%)">
-          <div class="g-over"><span>Teknoloji</span></div>
-        </div>
-        <div class="g-item" style="--gb:linear-gradient(160deg,#0F172A 0%,rgba(212,175,55,0.2) 100%)">
-          <div class="g-over"><span>Estetik</span></div>
-        </div>
-        <div class="g-item gi-tall"
-          style="--gb:linear-gradient(160deg,#07111F 0%,rgba(245,211,127,0.1) 60%,#0D192C 100%)">
-          <div class="g-over"><span>Veneer</span></div>
-        </div>
-        <div class="g-item" style="--gb:linear-gradient(135deg,#0F172A 0%,rgba(197,155,42,0.12) 100%)">
-          <div class="g-over"><span>İmplant</span></div>
-        </div>
+
+        <a href="https://www.instagram.com/ozel.bordent.adsp/" target="_blank" class="g-item gi-tall">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery-1.jpg" alt="Klinik" class="gallery-image" loading="lazy">
+          </div>
+          <div class="gallery-overlay"><span>Klinik</span></div>
+        </a>
+
+        <a href="https://www.instagram.com/ozel.bordent.adsp/" target="_blank" class="g-item">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery-2.jpg" alt="Tedavi" class="gallery-image" loading="lazy">
+          </div>
+          <div class="gallery-overlay"><span>Tedavi</span></div>
+        </a>
+
+        <a href="https://www.instagram.com/ozel.bordent.adsp/" target="_blank" class="g-item">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery-3.jpg" alt="Sonuç" class="gallery-image" loading="lazy">
+          </div>
+          <div class="gallery-overlay"><span>Sonuç</span></div>
+        </a>
+
+        <a href="https://www.instagram.com/ozel.bordent.adsp/" target="_blank" class="g-item gi-wide">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery-4.jpg" alt="Ekip" class="gallery-image" loading="lazy">
+          </div>
+          <div class="gallery-overlay"><span>Ekip</span></div>
+        </a>
+
+        <a href="https://www.instagram.com/ozel.bordent.adsp/" target="_blank" class="g-item">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery-5.jpg" alt="Teknoloji" class="gallery-image" loading="lazy">
+          </div>
+          <div class="gallery-overlay"><span>Teknoloji</span></div>
+        </a>
+
+        <a href="https://www.instagram.com/ozel.bordent.adsp/" target="_blank" class="g-item">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery-6.jpg" alt="Estetik" class="gallery-image" loading="lazy">
+          </div>
+          <div class="gallery-overlay"><span>Estetik</span></div>
+        </a>
+
+        <a href="https://www.instagram.com/ozel.bordent.adsp/" target="_blank" class="g-item gi-tall">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery-7.jpg" alt="Veneer" class="gallery-image" loading="lazy">
+          </div>
+          <div class="gallery-overlay"><span>Veneer</span></div>
+        </a>
+
+        <a href="https://www.instagram.com/ozel.bordent.adsp/" target="_blank" class="g-item">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery-8.jpg" alt="İmplant" class="gallery-image" loading="lazy">
+          </div>
+          <div class="gallery-overlay"><span>İmplant</span></div>
+        </a>
+
       </div>
       <div class="gallery-cta reveal-up">
         <a href="https://www.instagram.com/ozel.bordent.adsp/" target="_blank" class="btn-secondary">
@@ -617,6 +714,7 @@
     </div>
   </section>
 
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
   <section class="section contact-section" id="contact">
     <div class="section-inner">
       <div class="section-header">
@@ -630,7 +728,7 @@
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <path
                   d="M6 9.5c1.2 2.5 3.3 4.6 5.8 5.8l2-2c.3-.3.6-.3.9-.1 1 .4 2.1.6 3.3.6.5 0 .9.4.9.9V18c0 .5-.4.9-.9.9C8.3 18.9 3.1 13.7 3.1 7.3c0-.5.4-.9.9-.9h3.3c.5 0 .9.4.9.9 0 1.2.2 2.3.6 3.3.1.3 0 .7-.2.9L6 9.5z"
-                  stroke="#D4AF37" stroke-width="1.5" />
+                  stroke="var(--acc)" stroke-width="1.5" />
               </svg>
             </div>
             <div class="cc-body">
@@ -638,12 +736,12 @@
               <span>(0272) 214 32 00</span>
             </div>
             <svg class="cc-arr" width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M5 3l4 4-4 4" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M5 3l4 4-4 4" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round" />
             </svg>
           </a>
 
           <a href="https://wa.me/902722143200" target="_blank" class="cc-card glass reveal-up cc-wa" style="--d:0.1s">
-            <div class="cc-icon">
+            <div class="cc-icon cc-icon-wa">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -663,7 +761,7 @@
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <path
                   d="M11 2C7.69 2 5 4.69 5 8c0 4.75 6 11 6 11s6-6.25 6-11c0-3.31-2.69-6-6-6zm0 8a2 2 0 110-4 2 2 0 010 4z"
-                  stroke="#D4AF37" stroke-width="1.5" stroke-linejoin="round" />
+                  stroke="var(--acc)" stroke-width="1.5" stroke-linejoin="round" />
               </svg>
             </div>
             <div class="cc-body">
@@ -675,8 +773,8 @@
           <div class="cc-card glass reveal-up" style="--d:0.3s">
             <div class="cc-icon">
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <circle cx="11" cy="11" r="8" stroke="#D4AF37" stroke-width="1.5" />
-                <path d="M11 7v4l2.5 2.5" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" />
+                <circle cx="11" cy="11" r="8" stroke="var(--acc)" stroke-width="1.5" />
+                <path d="M11 7v4l2.5 2.5" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round" />
               </svg>
             </div>
             <div class="cc-body">
@@ -697,6 +795,7 @@
     </div>
   </section>
 
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -738,6 +837,7 @@
     </div>
   </footer>
 
+  <!-- Scroll-to-top -->
   <button class="stt-btn" id="stt-btn" aria-label="Yukarı çık">
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
       <path d="M9 14V4M4 9l5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
@@ -745,6 +845,7 @@
     </svg>
   </button>
 
+  <!-- WhatsApp FAB -->
   <a href="https://wa.me/902722143200" target="_blank" class="wa-fab" aria-label="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
       <path
