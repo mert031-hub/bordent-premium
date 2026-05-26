@@ -135,9 +135,13 @@ function initNav() {
 /* ═══════════════════════════════════════════════════
    ACTIVE NAV LINK (scroll spy)
    ═══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════
+   ACTIVE NAV LINK (scroll spy)
+   ═══════════════════════════════════════════════════ */
 function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  // Masaüstü (.nav-links) ve mobil (.mobile-menu) linkleri aynı anda hedeflendi
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .mobile-menu a[href^="#"]');
   if (!sections.length || !navLinks.length) return;
 
   const io = new IntersectionObserver(entries => {
@@ -149,7 +153,12 @@ function initActiveNav() {
         });
       }
     });
-  }, { threshold: 0.35, rootMargin: '-70px 0px -45% 0px' });
+  }, {
+    // DÜZELTME: Uzun bölümlerin takılmasını engellemek için threshold 0 yapıldı.
+    // Artık bölüm ekranda "belirli bir alana" (navbar'ın hemen altı) değdiği an tetiklenecek.
+    threshold: 0,
+    rootMargin: '-90px 0px -55% 0px'
+  });
 
   sections.forEach(s => io.observe(s));
 }

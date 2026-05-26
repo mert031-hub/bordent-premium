@@ -1625,47 +1625,92 @@ a {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 200px 200px;
+  grid-template-rows: repeat(3, 200px);
   gap: 14px;
   margin-bottom: 40px;
 }
 
+/* ─────────────────────────────────────────────
+   DESKTOP EDITORIAL LAYOUT
+───────────────────────────────────────────── */
+
+.gallery-grid > .g-item:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+/* Klinik */
+
+.gallery-grid > .g-item:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Tedavi */
+
+.gallery-grid > .g-item:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* Sonuç */
+
+.gallery-grid > .g-item:nth-child(4) {
+  grid-column: 2 / 4;
+  grid-row: 2;
+}
+
+/* Ekip */
+
+.gallery-grid > .g-item:nth-child(5) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* Teknoloji */
+
+.gallery-grid > .g-item:nth-child(6) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/* Estetik */
+
+.gallery-grid > .g-item:nth-child(7) {
+  grid-column: 4;
+  grid-row: 1 / 3;
+}
+
+/* Veneer */
+
+.gallery-grid > .g-item:nth-child(8) {
+  grid-column: 3 / 5;
+  grid-row: 3;
+}
+
+/* İmplant */
+
+/* ─────────────────────────────────────────────
+   GALLERY CARD
+───────────────────────────────────────────── */
+
 .g-item {
-  border-radius: var(--r-md);
-  overflow: hidden;
   position: relative;
-  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--r-md);
   border: 1px solid var(--card-border);
+  background: linear-gradient(145deg, var(--bg-soft), var(--bg-mid));
+  text-decoration: none;
+  cursor: pointer;
+
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(145deg, var(--bg-soft), var(--bg-mid));
 }
 
 .g-item:hover {
-  transform: scale(1.025);
+  transform: scale(1.02);
   box-shadow: var(--shadow-medium);
-}
-
-.g-item:hover .gallery-image {
-  transform: scale(1.06);
-}
-
-.g-item:hover .gallery-overlay {
-  opacity: 1;
-}
-
-.gi-tall {
-  grid-row: span 2;
-}
-
-.gi-wide {
-  grid-column: span 2;
 }
 
 .gallery-image-wrap {
@@ -1677,48 +1722,192 @@ a {
 .gallery-image {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+  object-position: center;
+
   display: block;
-  opacity: 0;
-  transition:
-    opacity 0.45s ease,
-    transform 0.4s ease;
-}
-
-.gallery-image.loaded {
   opacity: 1;
+
+  transition:
+    transform 0.45s ease,
+    opacity 0.4s ease;
 }
 
-.g-item.img-error .gallery-overlay {
-  opacity: 0.15;
-  background: rgba(14, 165, 233, 0.04);
+/* Hover zoom */
+
+.g-item:hover .gallery-image {
+  transform: scale(1.05);
 }
+
+/* ─────────────────────────────────────────────
+   EKİP FOTOĞRAFI FIX
+───────────────────────────────────────────── */
+
+.gallery-grid > .g-item:nth-child(4) .gallery-image {
+  transform: scale(1.18);
+  object-position: center center;
+}
+
+.gallery-grid > .g-item:nth-child(4):hover .gallery-image {
+  transform: scale(1.24);
+}
+
+/* ─────────────────────────────────────────────
+   OVERLAY
+───────────────────────────────────────────── */
 
 .gallery-overlay {
   position: absolute;
   inset: 0;
   z-index: 3;
-  background: rgba(15, 23, 42, 0.5);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.78),
+    rgba(15, 23, 42, 0.08)
+  );
+
   display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  padding: 18px;
+
+  opacity: 1;
+
   transition: opacity 0.3s ease;
 }
 
 .gallery-overlay span {
   font-family: var(--fh);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   color: #ffffff;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
+/* Hover overlay */
+
+.g-item:hover .gallery-overlay {
+  opacity: 0.92;
+}
+
+/* ─────────────────────────────────────────────
+   CTA
+───────────────────────────────────────────── */
+
 .gallery-cta {
   text-align: center;
+}
+
+/* ─────────────────────────────────────────────
+   MOBILE
+───────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .section,
+  .section-inner,
+  .gallery-section,
+  .gallery-grid {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .gallery-section .section-inner {
+    padding-inline: 14px;
+  }
+
+  .gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+
+    overflow-x: clip;
+
+    box-sizing: border-box;
+  }
+
+  .gallery-grid *,
+  .g-item,
+  .gallery-image-wrap,
+  .gallery-image {
+    box-sizing: border-box;
+  }
+
+  .gallery-grid > .g-item:nth-child(n) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .g-item {
+    aspect-ratio: 1 / 1;
+
+    min-height: 160px;
+    min-width: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    transform: none !important;
+  }
+
+  .g-item:hover {
+    transform: none !important;
+  }
+
+  .gallery-image-wrap {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  /* Mobile ekip image zoom */
+
+  .gallery-grid > .g-item:nth-child(4) .gallery-image {
+    transform: scale(1.08);
+  }
+
+  .gallery-grid > .g-item:nth-child(4):hover .gallery-image {
+    transform: scale(1.12);
+  }
+
+  .gallery-overlay {
+    padding: 12px;
+  }
+
+  .gallery-overlay span {
+    font-size: 12px;
+  }
+
+  .gallery-cta {
+    padding-bottom: 28px;
+  }
 }
 
 /* ─── CONTACT ────────────────────────────────────── */
