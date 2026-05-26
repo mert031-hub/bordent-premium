@@ -2741,3 +2741,126 @@ a {
     display: none !important;
   }
 }
+/* ═══════════════════════════════════════════════════
+   SERVICE CARDS - BACKGROUND IMAGE UPGRADE
+   ═══════════════════════════════════════════════════ */
+.svc-card.bg-card {
+  position: relative;
+  overflow: hidden; /* Görselin kartın dışına taşmasını engeller */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Premium, ince bir kenarlık */
+}
+
+/* Tüm metin ve ikonları arka planın üstüne alıyoruz */
+.svc-card.bg-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Arka plan görseli ve karanlık gradyan mimarisi */
+.svc-card.bg-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  /* Koyu lacivert/slate gradyan ile metin okunabilirliğini garantiye alıyoruz */
+  background-image: var(--bg-image);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Sinematik Hover Efekti: Sadece içteki görsel hafifçe yakınlaşır */
+.svc-card.bg-card:hover::before {
+  transform: scale(1.06);
+}
+
+/* Tipografi - Koyu zemin üzerinde okunabilirlik ayarları */
+.svc-card.bg-card .svc-num {
+  color: rgba(255, 255, 255, 0.25);
+}
+.svc-card.bg-card .svc-title {
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Derinlik katar */
+}
+.svc-card.bg-card .svc-desc {
+  color: rgba(255, 255, 255, 0.75);
+}
+.svc-card.bg-card .svc-line {
+  background: rgba(255, 255, 255, 0.15); /* Çizgiyi yumuşak beyaza çevirir */
+}
+
+/* Dinamik Görsel Atamaları (CSS Değişkenleri ile) */
+.svc-card-whitening {
+  --bg-image: url("https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop");
+}
+.svc-card-implant {
+  --bg-image: url("/images/implant\ yeni.jpg");
+}
+.svc-card-smile {
+  --bg-image: url("/images/gülüş\ beyazlatma800jpg.jpg");
+}
+.svc-card-rootcanal {
+  --bg-image: url("/images/KanalTedavisi.jpg");
+}
+.svc-card-ortho {
+  --bg-image: url("/images/ortodonti.jpg");
+}
+.svc-card-pedo {
+  --bg-image: url("/images/Pedodonti.jpg");
+}
+.svc-card-aesthetic {
+  --bg-image: url("/images/genelyeni.jpg");
+}
+/* ═══════════════════════════════════════════════════
+   SERVICE CARD HOVER OVERLAY LIGHTEN
+   ═══════════════════════════════════════════════════ */
+
+.svc-card.bg-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: rgba(15, 23, 42, 0.58);
+
+  transition:
+    background 0.45s ease,
+    opacity 0.45s ease;
+
+  pointer-events: none;
+}
+
+/* Hover'da karanlığı azalt */
+
+.svc-card.bg-card:hover::after {
+  background: rgba(15, 23, 42, 0.34);
+}
+/* ─────────────────────────────────────────────
+   MOBILE LOADER TEXT FIX
+───────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .loader-inner {
+    width: 100%;
+    padding-inline: 24px;
+  }
+
+  .loader-tagline {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.18em;
+
+    white-space: normal;
+
+    overflow-wrap: break-word;
+
+    padding-inline: 12px;
+  }
+}
