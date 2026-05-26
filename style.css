@@ -1620,10 +1620,32 @@ a {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 200px 200px;
+  grid-template-rows: repeat(3, 200px);
   gap: 14px;
   margin-bottom: 40px;
 }
+
+/* ── Explicit editorial placement ──────────────────────
+   Layout (4 cols × 3 rows, all 12 cells filled):
+   ┌──────────┬──────────┬──────────┬──────────┐
+   │ Klinik   │ Tedavi   │ Sonuç    │ Veneer   │
+   │ (tall)   │          │          │ (tall)   │
+   ├──────────┼──────────┴──────────┤          │
+   │          │  Ekip (wide 2-col)  │          │
+   ├──────────┼──────────┬──────────┴──────────┤
+   │Teknoloji │ Estetik  │  İmplant (wide 2-col)│
+   └──────────┴──────────┴─────────────────────┘
+   nth-child selectors carry higher specificity than
+   .gi-tall / .gi-wide, so they safely override the
+   span-based fallbacks without touching the HTML.  */
+.gallery-grid > .g-item:nth-child(1) { grid-column: 1;     grid-row: 1 / 3; } /* Klinik  — tall left  */
+.gallery-grid > .g-item:nth-child(2) { grid-column: 2;     grid-row: 1;     } /* Tedavi              */
+.gallery-grid > .g-item:nth-child(3) { grid-column: 3;     grid-row: 1;     } /* Sonuç               */
+.gallery-grid > .g-item:nth-child(4) { grid-column: 2 / 4; grid-row: 2;     } /* Ekip   — wide centre*/
+.gallery-grid > .g-item:nth-child(5) { grid-column: 1;     grid-row: 3;     } /* Teknoloji           */
+.gallery-grid > .g-item:nth-child(6) { grid-column: 2;     grid-row: 3;     } /* Estetik             */
+.gallery-grid > .g-item:nth-child(7) { grid-column: 4;     grid-row: 1 / 3; } /* Veneer  — tall right*/
+.gallery-grid > .g-item:nth-child(8) { grid-column: 3 / 5; grid-row: 3;     } /* İmplant — wide base */
 
 .g-item {
   border-radius: var(--r-md);
@@ -2272,6 +2294,12 @@ a {
     gap: 10px;
   }
 
+  /* Reset all explicit desktop placements — let 2-col auto-flow take over */
+  .gallery-grid > .g-item:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .g-item {
     aspect-ratio: 1;
   }
@@ -2450,6 +2478,12 @@ a {
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Re-confirm reset for 480px — belt-and-suspenders */
+  .gallery-grid > .g-item:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .gi-wide {
